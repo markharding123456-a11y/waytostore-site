@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="12" fill="#ffffff"/>
+  <!-- Four storage containers stacked in a plus, corrugated sides, a tail sweeping clockwise off each one (Russell's concept) -->
   <g fill="#1e7a4c">
     <rect x="26.5" y="6" width="11" height="20.5" rx="1.5"/>
     <rect x="37.5" y="26.5" width="20.5" height="11" rx="1.5"/>

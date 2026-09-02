@@ -1,0 +1,71 @@
+"""Apply the shared header/footer/font block to every page. Run from the site root:
+    python _build/patch_pages.py
+Rewrites the <header>...</header>, <footer>...</footer> blocks and the Google Fonts link
+in every HTML page under the root and blog/. Idempotent."""
+import re, pathlib
+
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+MARK = '<svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><g fill="#1e7a4c"><rect x="26.5" y="6" width="11" height="20.5" rx="1.5"/><rect x="37.5" y="26.5" width="20.5" height="11" rx="1.5"/><rect x="26.5" y="37.5" width="11" height="20.5" rx="1.5"/><rect x="6" y="26.5" width="20.5" height="11" rx="1.5"/><rect x="27.5" y="27.5" width="9" height="9"/></g><g stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" fill="none"><path d="M30 9.5 V23 M34 9.5 V23"/><path d="M41 30 H54.5 M41 34 H54.5"/><path d="M30 41 V54.5 M34 41 V54.5"/><path d="M9.5 30 H23 M9.5 34 H23"/></g><g fill="none" stroke="#ff6a4d" stroke-width="3.4" stroke-linecap="round"><path d="M39 7.5 Q49 7.5 51 17"/><path d="M56.5 39 Q56.5 49 47 51"/><path d="M25 56.5 Q15 56.5 13 47"/><path d="M7.5 25 Q7.5 15 17 13"/></g></svg>'
+FONTS = ('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800'
+         '&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">')
+
+def header(prefix, current=None):
+    def li(href, label, key):
+        cur = ' aria-current="page"' if key == current else ''
+        return f'      <li><a href="{href}"{cur}>{label}</a></li>'
+    return f'''<header>
+  <div class="wrap nav">
+    <a class="brand" href="{prefix}">{MARK}<span class="word"><b>Way To Store</b><small>Self Storage</small></span></a>
+    <ul>
+{li(prefix + "#storage", "Storage", "storage")}
+{li(prefix + "#offer", "Offer", "offer")}
+{li(prefix + "#faq", "Questions", "faq")}
+{li(prefix + "#location", "Location", "location")}
+{li(prefix + "blog/", "Blog", "blog")}
+    </ul>
+    <a class="btn" href="tel:+12504427977">250-442-7977</a>
+  </div>
+</header>'''
+
+def footer(prefix):
+    return f'''<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="{prefix}">{MARK}<span class="word"><b>Way To Store</b><small>Self Storage</small></span></a>
+        <p>Heated indoor storage with level entry and a fenced compound for RVs, boats, trailers and containers. Locally owned, on Sagamore Road in Grand Forks.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="tel:+12504427977">250-442-7977</a></li>
+          <li><a href="mailto:info@waytostore.ca">info@waytostore.ca</a></li>
+          <li>136 Sagamore Road<br>Grand Forks, BC V0H 1H4</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Site</h3>
+        <ul>
+          <li><a href="{prefix}#storage">Storage</a></li>
+          <li><a href="{prefix}#offer">Introductory offer</a></li>
+          <li><a href="{prefix}#faq">Common questions</a></li>
+          <li><a href="{prefix}blog/">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">Way To Store Self Storage is operated by 1436894 B.C. Ltd., Grand Forks, British Columbia.</div>
+  </div>
+</footer>'''
+
+def patch(path, prefix, current):
+    s = path.read_text(encoding="utf-8")
+    s = re.sub(r"<header>.*?</header>", header(prefix, current), s, count=1, flags=re.S)
+    s = re.sub(r"<footer>.*?</footer>", footer(prefix), s, count=1, flags=re.S)
+    s = re.sub(r'<link rel="stylesheet" href="https://fonts\.googleapis\.com/css2\?[^"]*">', FONTS, s, count=1)
+    path.write_text(s, encoding="utf-8", newline="\n")
+    print("patched", path.relative_to(ROOT))
+
+patch(ROOT / "index.html", "./", None)
+patch(ROOT / "404.html", "/", None)
+for p in sorted((ROOT / "blog").glob("*.html")):
+    patch(p, "../", "blog")
