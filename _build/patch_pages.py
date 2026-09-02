@@ -62,6 +62,7 @@ def patch(path, prefix, current):
     s = re.sub(r"<header>.*?</header>", header(prefix, current), s, count=1, flags=re.S)
     s = re.sub(r"<footer>.*?</footer>", footer(prefix), s, count=1, flags=re.S)
     s = re.sub(r'<link rel="stylesheet" href="https://fonts\.googleapis\.com/css2\?[^"]*">', FONTS, s, count=1)
+    s = re.sub(r'href="((?:\.\./|/)?)styles\.css(?:\?v=\d+)?"', lambda m: 'href="%sstyles.css?v=%s"' % (m.group(1), CSS_VERSION), s)
     path.write_text(s, encoding="utf-8", newline="\n")
     print("patched", path.relative_to(ROOT))
 
