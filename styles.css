@@ -66,11 +66,9 @@ header{border-bottom:1px solid var(--line);background:var(--white);position:stic
 .ribbon a{color:var(--ink);font-weight:700;white-space:nowrap}
 
 /* hero */
-.hero{padding:84px 0 72px;background:
-  radial-gradient(circle at 88% 12%, var(--accent-soft) 0 120px, transparent 121px),
-  linear-gradient(var(--white),var(--white))}
+.hero{padding:84px 0 72px;background:var(--white)}
 .hero .grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:center}
-@media (max-width:860px){.hero .grid{grid-template-columns:1fr;gap:36px}.hero{background:var(--white)}}
+@media (max-width:860px){.hero .grid{grid-template-columns:1fr;gap:36px}}
 .hero p.lede{font-size:21px;color:var(--ink-2);margin-top:22px}
 .hero-card{background:var(--tint);border-radius:20px;padding:28px 28px 24px;border:1px solid var(--line)}
 .hero-card .mark{width:56px;height:56px;margin-bottom:18px}
