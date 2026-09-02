@@ -3,3 +3,4 @@ _deploy/
 Thumbs.db
 .DS_Store
 _build/*.png
+brand-options.html
