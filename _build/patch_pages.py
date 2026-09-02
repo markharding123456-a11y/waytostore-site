@@ -6,6 +6,7 @@ import re, pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 MARK = '<svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M10 28 H54 V56 H10 Z" fill="#c68b4f"/><path d="M10 28 L4 12 L24 18 L32 28 Z M54 28 L60 12 L40 18 L32 28 Z" fill="#dfae78"/><path d="M24 18 L32 4 L40 18 L32 28 Z" fill="#f0d2ab"/><rect x="29.5" y="28" width="5" height="28" fill="#f26b1d"/><path d="M10 28 H54" stroke="#a9713a" stroke-width="1.5"/><rect x="14" y="44" width="11" height="7" rx="1" fill="#ffffff"/></svg>'
+CSS_VERSION = '5'
 FONTS = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">'
 
 def header(prefix, current=None):
