@@ -3,7 +3,7 @@
 Copy-paste text for the listings. Keep the phone, address and offer identical everywhere so Google matches them.
 
 ## Business name
-Way To Store Self Storage
+Way To Store Self Storage (legal name: Way To Store Self Storage Ltd., approved by BC Registries 2026-09-14)
 
 ## Address
 136 Sagamore Road, Grand Forks, BC V0H 1H4

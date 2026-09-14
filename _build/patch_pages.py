@@ -53,7 +53,7 @@ def footer(prefix):
         </ul>
       </div>
     </div>
-    <div class="legal">Way To Store Self Storage is operated by 1436894 B.C. Ltd., Grand Forks, British Columbia.</div>
+    <div class="legal">&copy; Way To Store Self Storage Ltd., 136 Sagamore Road, Grand Forks, British Columbia.</div>
   </div>
 </footer>'''
 
