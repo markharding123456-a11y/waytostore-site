@@ -1,0 +1,9 @@
+---
+# cPanel "Git Version Control" deployment (optional route). Clone this repo in cPanel, then "Deploy HEAD Commit".
+# Copies only the public site files into public_html. CHANGE cpaneluser to the account's cPanel username first.
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/cpaneluser/public_html/
+    - /bin/cp -f index.html 404.html heated-storage-grand-forks.html rv-boat-trailer-storage-grand-forks.html privacy.html $DEPLOYPATH
+    - /bin/cp -f styles.css robots.txt sitemap.xml favicon.ico favicon.svg logo.svg og-image.png .htaccess $DEPLOYPATH
+    - /bin/cp -Rf blog fonts $DEPLOYPATH
