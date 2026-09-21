@@ -22,7 +22,7 @@ https://waytostore.ca
 - Additional categories: RV storage facility, Boat storage facility
 - Description (750 characters max):
 
-Way To Store Self Storage is a locally owned storage facility at 136 Sagamore Road in Grand Forks, BC. Heated indoor units keep furniture, documents and electronics dry and above freezing through the winter, with level drive-up entry and no stairs. A fully fenced outdoor compound has room for motorhomes, travel trailers, boats on trailers, utility trailers, vehicles, work equipment and storage containers. Month-to-month rentals, pay by e-transfer, credit card or cheque. Introductory offer: half price on your first month for new rentals of up to four months. Serving Grand Forks, Christina Lake, Greenwood, Midway and the Boundary. Call 250-442-7977.
+Way To Store Self Storage is a locally owned storage facility at 136 Sagamore Road in Grand Forks, BC. Heated indoor units keep furniture, documents and electronics dry and above freezing through the winter, with level drive-up entry and no stairs. A fully fenced outdoor compound has room for motorhomes, travel trailers, boats on trailers, utility trailers, vehicles, work equipment and storage containers. Month-to-month rentals, paid by credit card. Introductory offer: half price on your first month for new rentals of up to four months. Serving Grand Forks, Christina Lake, Greenwood, Midway and the Boundary. Call 250-442-7977.
 
 - Attributes to tick: Locally owned; Wheelchair-accessible entrance (level entry); Credit cards accepted.
 - Do not publish hours. Set hours to "No hours available" or leave blank; the website does the same.
