@@ -140,6 +140,9 @@ def patch(path, prefix, current):
         s = re.sub(r'<link rel="stylesheet" href="https://fonts\.googleapis\.com/css2\?[^"]*">', fonts, s, count=1)
     s = re.sub(r'<link rel="preconnect" href="https://fonts\.(?:googleapis|gstatic)\.com"[^>]*>\s*', '', s)
     s = re.sub(r'href="((?:\.\./|/)?)styles\.css(?:\?v=\d+)?"', lambda m: 'href="%sstyles.css?v=%s"' % (m.group(1), CSS_VERSION), s)
+    if 'favicon.ico' not in s:
+        s = re.sub(r'(<link rel="icon" href="([^"]*)favicon\.svg" type="image/svg\+xml">)',
+                   r'\1\n<link rel="icon" href="\2favicon.ico" sizes="32x32">', s, count=1)
     if 'property="og:image"' in s:
         if 'property="og:locale"' not in s:
             s = re.sub(r'(<meta property="og:image"[^>]*>)', r'\1\n<meta property="og:locale" content="en_CA">', s, count=1)
