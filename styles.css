@@ -219,3 +219,10 @@ footer .legal{border-top:1px solid #4a3f39;margin-top:32px;padding-top:18px;font
 .related h2{font-size:20px;margin:0 0 10px}
 .related ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
 .related a{font-weight:600}
+
+/* links page (Instagram bio target) */
+.linkpage{max-width:560px}
+.btn.wide{display:block;text-align:center;margin:26px 0 18px}
+.linklist{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.linklist a{display:block;padding:16px 20px;border:1px solid var(--line);border-radius:16px;background:var(--white);color:var(--ink);font-weight:600;text-decoration:none;box-shadow:var(--shadow)}
+.linklist a:hover{border-color:var(--accent);color:var(--accent-dark)}
