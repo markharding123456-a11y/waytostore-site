@@ -4,8 +4,10 @@ ErrorDocument 404 /404.html
 # Serve index.html for /blog/ and any other directory
 DirectoryIndex index.html
 
-# Force HTTPS and the bare domain. ENABLE ONLY AFTER the SSL certificate (cPanel AutoSSL)
-# is active for waytostore.ca and www.waytostore.ca, or visitors get certificate errors.
+# Canonical host: force HTTPS and the bare domain (no www). Verified 2026-09-21: http://, https://www. and https://
+# all answer 200 with no redirect, which would split ranking signals at launch.
+# ENABLE (remove the leading '# ' on the six lines below) ONLY AFTER cPanel AutoSSL has issued certificates for
+# BOTH waytostore.ca and www.waytostore.ca, or visitors get certificate errors.
 # <IfModule mod_rewrite.c>
 #   RewriteEngine On
 #   RewriteCond %{HTTPS} off [OR]
@@ -20,4 +22,9 @@ DirectoryIndex index.html
   ExpiresByType image/svg+xml "access plus 30 days"
   ExpiresByType image/png "access plus 30 days"
   ExpiresByType image/x-icon "access plus 30 days"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType font/woff2 .woff2
 </IfModule>
