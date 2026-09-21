@@ -76,7 +76,7 @@ header{border-bottom:1px solid var(--line);background:var(--white);position:stic
   .brand .mark{width:34px;height:34px}
   .brand .word b{font-size:19px}
   .brand .word small{display:none}
-  .nav .btn{padding:9px 14px;font-size:15px}
+  .nav .btn{padding:9px 14px;font-size:15px;margin-left:auto}
 }
 
 /* offer ribbon */
