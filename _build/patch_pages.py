@@ -10,8 +10,8 @@ import html, json, pathlib, re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = "https://waytostore.ca/"
-CSS_VERSION = '7'
-MARK = '<svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M10 28 H54 V56 H10 Z" fill="#c68b4f"/><path d="M10 28 L4 12 L24 18 L32 28 Z M54 28 L60 12 L40 18 L32 28 Z" fill="#dfae78"/><path d="M24 18 L32 4 L40 18 L32 28 Z" fill="#f0d2ab"/><rect x="29.5" y="28" width="5" height="28" fill="#f26b1d"/><path d="M10 28 H54" stroke="#a9713a" stroke-width="1.5"/><rect x="14" y="44" width="11" height="7" rx="1" fill="#ffffff"/></svg>'
+CSS_VERSION = '8'
+MARK = '<svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M10 28 H54 V56 H10 Z" fill="#c68b4f"/><path d="M10 28 L4 12 L24 18 L32 28 Z M54 28 L60 12 L40 18 L32 28 Z" fill="#dfae78"/><path d="M24 18 L32 4 L40 18 L32 28 Z" fill="#f0d2ab"/><rect x="29.5" y="28" width="5" height="28" fill="#c8551b"/><path d="M10 28 H54" stroke="#a9713a" stroke-width="1.5"/><rect x="14" y="44" width="11" height="7" rx="1" fill="#ffffff"/></svg>'
 
 NAV = [("heated-storage-grand-forks.html", "Heated storage", "heated"),
        ("rv-boat-trailer-storage-grand-forks.html", "RV &amp; boat storage", "rv"),
